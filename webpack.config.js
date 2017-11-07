@@ -7,6 +7,12 @@ module.exports = {
         app: './src/index.js',
         print: './src/print.js'
     },
+    devtool: 'inline-source-map',//ช่วยค้นหาว่า ไฟล์ bundle ไหนที่เสีย
+    devServer: {
+        contentBase: path.join(__dirname,"dist"),
+        compress: true,
+        port: 9000
+    },
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
